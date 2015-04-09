@@ -33,3 +33,12 @@ dvrk_psm:
     type: effort_controllers/JointPositionController
     joint: right_outer_wrist_open_angle_joint_1
     pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint8_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: right_outer_pitch_joint_3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint9_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: right_outer_pitch_joint_4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+

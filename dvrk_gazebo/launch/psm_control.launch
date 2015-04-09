@@ -12,8 +12,10 @@
                                  joint5_position_controller
                                  joint6_position_controller
                                  joint7_position_controller
-                                 "/>
+                                 joint8_position_controller
+				 joint9_position_controller
+					"/>
   <!-- RQT_GUI for setting joints positions  -->
   <node name="psm_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
-	       output="screen" args="--perspective-file $(find dvrk_gazebo)/launch/psm_control.perspective"/>
+	       output="screen" args="--perspective-file $(find dvrk_gazebo)/launch/psm2_gazebo.perspective"/>
 </launch>
