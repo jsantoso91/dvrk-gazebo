@@ -1,0 +1,19 @@
+<!-- Loading and Launching Controllers -->
+<launch>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find dvrk_gazebo)/config/mtm_torque_control.yaml" command="load"/>
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/mtm" args="joint_state_controller
+                                 joint1_torque_controller
+                                 joint2_torque_controller
+                                 joint3_torque_controller
+                                 joint4_torque_controller
+                                 joint5_torque_controller
+                                 joint6_torque_controller
+                                 joint7_torque_controller
+                                 "/>
+  <!-- RQT_GUI for setting joints positions  -->
+  <node name="mtm_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
+	       output="screen" args="--perspective-file $(find dvrk_gazebo)/launch/mtm_torque_control.perspective"/>
+</launch>
